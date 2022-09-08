@@ -2,13 +2,33 @@
     margin: 0;
     padding: 0;
 }
-.holaMundo{
-    font-size: 100px;
-    text-align: center;
-    align-items: center;
-    margin: 70px;
-    padding: 30px;
-    height: 110px;
-    filter: drop-shadow(8px 7px 5px #7200e3);
+
+.loader{
+    top: 50px;
+    left: 20px;
+    width: 220px;
+    height: 22px;
+    border-radius: 40px;
+    color: salmon;
+    border: 2px solid;
+    position: relative;
+}
+.loader::before{
+    content: "";
+    position: absolute;
+    margin: 2px;
+    width: 25%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: inherit;
+    background: currentColor;
+    animation: sidetoside 1s infinite linear;
+}
+@keyframes sidetoside{
+    50%{
+        left: 100%;
+        transform: translatex(calc(-100% - 4px));
+    }
 }
 

@@ -19,20 +19,16 @@ do{
 
 const misProductos = [
     {
-        nombre: "Vodka smirnoff",
-        precio: $2500
+        nombre: "Vodka smirnoff $2500",
     },
     {
-        nombre: "Vodka Skyy Raspberry",
-        precio: $1800 
+        nombre: "Vodka Skyy Raspberry $1800",
     },
     {
-        nombre: "Fernet Branca",
-        precio:$1700
+        nombre: "Fernet Branca $1800",
     },
     {
         nombre: "Absolut Vodka",
-        precio: $3800
     }
     ];
 const productosTerminados = []
