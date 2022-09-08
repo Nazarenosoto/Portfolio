@@ -1,66 +1,81 @@
-//Desafio
+    //PRIMERA PREENTREGA
 
-alert(`¿No sabés multiplicar?`)
-alert(`Tranqui, yo te ayudo`)
-let numeroMultiplicar = parseInt(prompt('Ingresá un numero que quieras multiplicar'))
-let numerolimite = parseInt(prompt("¿Hasta donde querés multiplicarlo?"))
-for(let i = 0; i <= numerolimite;i++){
-    let Multiplicacion = numeroMultiplicar * i
-    console.log(`${numeroMultiplicar} x ${i} = ${Multiplicacion}`)
-}
-//Ciclos condicionales
-
-let condicion = true
-let contador = 0
-alert(`Bueno, ahora decime`)
+alert(`Hola!`)
 do{
-    let preguntA = prompt("Cuantas libertadores tiene boca?")
-    if(preguntA.toLowerCase() == "6"){
-        console.log("Bien ahí chee")
-        condicion = false 
-        alert(`bien ahí!!!!!`)
+    let preguntA = prompt("¿Cuantos años tenés?")
+    if(preguntA.toLowerCase() >= "18"){
+        console.log("El usuario es mayor de edad y tiene " + preguntA + " años")
+        condicion = true 
+        alert(`Te doy la bienvenida a la vinoteca`
+        )
     }else{
-        contador=contador + 1
-        console.log("noup, volvé 5 intentarlo. intento n°" + contador)
-        alert(`Noo, volvé a intentarlo. intento n°` + contador)
+        console.log("El usuario es menor de edad y tiene " + preguntA + " años")
+        condicion = false
+        alert(`Lo siento, vuelve cuando tengas mas de 18 años`)
     }
-    
-}while((condicion) && (contador < 10))
+}while((condicion) && (condicion >=18))
 
 
-/*Funcion*/
-function preguntaSecret(){
-    let pregunta = prompt("¿Querés contarme un secreto? rta si o no")
-    switch (pregunta){
-        case "si": 
-        let respuesta = "Perfecto, dime tu secreto"
-        alert(respuesta)
-        secretito()
-        break;
-        case "no": 
-        let respuestaNo = "Está bien :("
-        alert(respuestaNo);
-        break;
-        default:
-        alert("Por favor responder con si o no")
-        preguntaSecret()
-        break;
-    }}
-    preguntaSecret()
-    
-    function secretito(){
-    let secretoIntro = prompt("Escribe tu secreto")
-    
-    if (secretoIntro >=639){
-        alert("Solo esto tenés para contar?");
+
+const misProductos = [
+    {
+        nombre: "Vodka smirnoff",
+        precio: $2500
+    },
+    {
+        nombre: "Vodka Skyy Raspberry",
+        precio: $1800 
+    },
+    {
+        nombre: "Fernet Branca",
+        precio:$1700
+    },
+    {
+        nombre: "Absolut Vodka",
+        precio: $3800
     }
-    
-    else(
-        alert ("Bien..."))
-        let secret = prompt("Querés contarme otro? rta si o no")
-        if (secret == "si") {
-            secretito()
-        }else(
-            alert("Bueno mi rey, nos vemos, ¡cuidate!"))
+    ];
+const productosTerminados = []
+
+function initApp(){
+    let ingresar = confirm("¿Que desea comprar?");
+
+    while(ingresar){
+        const compraAFinalizar = prompt(` ${mostrarProductos()} \n Ingrese los productos a comprar`)
+        finalizarCompra(compraAFinalizar)
+
+        if(misProductos.length){
+            ingresar = false;
+        }
     }
-    
+    alert("Muy bien, vuelva pronto!")
+}
+initApp();
+
+function mostrarProductos(){
+    let listaProducto = "";
+
+    for(compra of misProductos){
+        listaProducto += `${compra.nombre}`
+    }
+
+    if(misProductos.length){
+        return "Mis productos : \n" + misProductos.join("\n")
+    }else{
+        return "No tenemos lo que buscas"
+    }
+}
+
+function finalizarCompra(compra){
+    const index = misProductos.indexOf(compra)
+
+    if(index != -1){
+        productosTerminados.push(compra);
+        misProductos.splice(index, 1)
+        console.log("productosTerminados", productosTerminados)
+    }else{
+        alert("Producto no encontrado")
+    }
+}
+
+

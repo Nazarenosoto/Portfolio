@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.holaMundo{
+    font-size: 100px;
+    text-align: center;
+    align-items: center;
+    margin: 70px;
+    padding: 30px;
+    height: 110px;
+    filter: drop-shadow(8px 7px 5px #7200e3);
+}
+
