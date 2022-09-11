@@ -51,8 +51,8 @@ initApp();
 function mostrarProductos(){
     let listaProducto = "";
 
-    for(compra of misProductos){
-        listaProducto += `${compra.nombre}`
+    for(let compra of misProductos){
+        listaProducto += ` ${compra.misProductos}`
     }
 
     if(misProductos.length){
@@ -73,5 +73,8 @@ function finalizarCompra(compra){
         alert("Producto no encontrado")
     }
 }
+
+
+
 
 
