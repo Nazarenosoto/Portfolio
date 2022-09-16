@@ -5,13 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto Con Js</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./scss/style.scss">
+    <link rel="stylesheet" href="./css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container">
+    <!--Loader-->
+    <div class="contenedor_loader">
         <div class="loader"></div>
     </div>
+    <!--Protuctos-->
+    <div class="container m-4">
+        <h2 class="text-center">¿Que quieres vender?</h2>
+    <div id="producIngresado" class="text-center">
+        <input type="text" id="inputProduc" placeholder="Ingrese su producto">
+        <button  id="btnProduc" class="btn btn-primary btn-sm" role="button">Subir</button>
+        <button id="borrarTodo" class="btn btn-danger btn-sm" role="button">Eliminar</button>
+    </div>
+    </div>
+    <div id="listProduc"></div>
+
     <script src="./js/estilo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>

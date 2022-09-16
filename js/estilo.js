@@ -1,80 +1,56 @@
-    //PRIMERA PREENTREGA
+//Loader
+window.addEventListener('load', () => {
+    const contenedor_loader = document.querySelector ('.contenedor_loader')
+    contenedor_loader.style.opacity = 0
+    contenedor_loader.style.visibility = 'hidden'
+    console.log("La pagina ha iniciado")
+})
 
-alert(`Hola!`)
-do{
-    let preguntA = prompt("¿Cuantos años tenés?")
-    if(preguntA.toLowerCase() >= "18"){
-        console.log("El usuario es mayor de edad y tiene " + preguntA + " años")
-        condicion = true 
-        alert(`Te doy la bienvenida a la vinoteca`
-        )
-    }else{
-        console.log("El usuario es menor de edad y tiene " + preguntA + " años")
-        condicion = false
-        alert(`Lo siento, vuelve cuando tengas mas de 18 años`)
-    }
-}while((condicion) && (condicion >=18))
+//Termina Loader
 
-
-
-const misProductos = [
-    {
-        nombre: "Vodka smirnoff $2500",
-    },
-    {
-        nombre: "Vodka Skyy Raspberry $1800",
-    },
-    {
-        nombre: "Fernet Branca $1800",
-    },
-    {
-        nombre: "Absolut Vodka",
-    }
-    ];
-const productosTerminados = []
-
-function initApp(){
-    let ingresar = confirm("¿Que desea comprar?");
-
-    while(ingresar){
-        const compraAFinalizar = prompt(` ${mostrarProductos()} \n Ingrese los productos a comprar`)
-        finalizarCompra(compraAFinalizar)
-
-        if(misProductos.length){
-            ingresar = false;
-        }
-    }
-    alert("Muy bien, vuelva pronto!")
-}
-initApp();
-
-function mostrarProductos(){
-    let listaProducto = "";
-
-    for(let compra of misProductos){
-        listaProducto += ` ${compra.misProductos}`
-    }
-
-    if(misProductos.length){
-        return "Mis productos : \n" + misProductos.join("\n")
-    }else{
-        return "No tenemos lo que buscas"
+//Subir productos
+const product = []
+let idSolit = 0
+class Products{
+    constructor(Producto){
+        this.Producto = Producto
+        this.id = idSolit++
     }
 }
 
-function finalizarCompra(compra){
-    const index = misProductos.indexOf(compra)
+const inputProduc = document.getElementById('inputProduc')
+const btnProduc = document.getElementById('btnProduc')
+const borrarTodo = document.getElementById('borrarTodo')
+const listProduc = document.getElementById('listProduc')
 
-    if(index != -1){
-        productosTerminados.push(compra);
-        misProductos.splice(index, 1)
-        console.log("productosTerminados", productosTerminados)
-    }else{
-        alert("Producto no encontrado")
-    }
+btnProduc.addEventListener('click', () =>{
+    product.push(new Products(inputProduc.value))
+    console.log(product)
+    crearProducto()
+})
+
+function crearProducto() {
+    const Producto = document.createElement('div')
+    product.forEach( (x) => {
+        Producto.innerHTML = `<div class="container">
+        <div class="row productoss">
+        <div class="producto col-md-4 col-lg-3 col-sm-1">
+        <img src="../img/cards/Ropa-del-usuario.jpg" alt="Remera deportiva Nike" class="imagenes">
+        <div class="informacion">
+            <span class="tipo-envio">Envio con normalidad</span>
+            <span class="costo-envio">Envio gratis</span>
+            <span class="prenda">${x.Producto}</span>
+            <div class="calificacion">
+                <p class="ppp2">⋆⋆⋆⋆⋆</p>
+            </div>
+            <a href="#" class="aa">Contactar</a>
+            <a href="#" class="carrito compra" id="envento">Agregar al carrito de compras</a>
+        </div>
+    </div>
+    </div>
+</div>
+        `
+    });
+    listProduc.appendChild(Producto)
 }
-
-
-
-
 
