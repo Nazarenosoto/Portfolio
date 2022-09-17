@@ -35,7 +35,7 @@ function crearProducto() {
         Producto.innerHTML = `<div class="container">
         <div class="row productoss">
         <div class="producto col-md-4 col-lg-3 col-sm-1">
-        <img src="../img/cards/Ropa-del-usuario.jpg" alt="Remera deportiva Nike" class="imagenes">
+        <img src="./img/cards/Ropa-del-usuario.jpg" alt="Remera deportiva Nike" class="imagenes">
         <div class="informacion">
             <span class="tipo-envio">Envio con normalidad</span>
             <span class="costo-envio">Envio gratis</span>
