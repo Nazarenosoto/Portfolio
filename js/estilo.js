@@ -53,4 +53,26 @@ function crearProducto() {
     });
     listProduc.appendChild(Producto)
 }
+//Agregar al carrito de compra
 
+//Productos
+class Ropita{
+    constructor(nombre, precio){
+        this.nombre = nombre
+        this.precio = precio
+    }
+    mostrarDatos(){
+        console.log(`El nombre es ${this.nombre} y su precio es ${this.precio}`)
+    }
+}
+let carrito = []
+
+const Ropa1 = new Ropita("Remera deportiva Nike", 2800)
+const Ropa2 = new Ropita("Remera deportiva Nike", 2800)
+const Ropa3 = new Ropita("Remera deportiva Nike", 2800)
+const Ropa4 = new Ropita("Remera deportiva Nike", 2800)
+const Ropa5 = new Ropita("Remera deportiva Nike", 2800)
+const Ropa6 = new Ropita("Remera deportiva Nike", 2800)
+
+let stockProducts = []
+stockProducts.push(Ropa1,Ropa2,Ropa3,Ropa4,Ropa5,Ropa6)
