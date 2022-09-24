@@ -32,7 +32,7 @@ btnProduc.addEventListener('click', () =>{
 function crearProducto() {
     const Producto = document.createElement('div')
     product.forEach( (x) => {
-        Producto.innerHTML = `<div class="container">
+        Producto.innerHTML = `
         <div class="row productoss">
         <div class="producto col-md-4 col-lg-3 col-sm-1">
         <img src="./img/cards/Ropa-del-usuario.jpg" alt="${x.Producto}" class="imagenes">
@@ -48,12 +48,10 @@ function crearProducto() {
         </div>
     </div>
     </div>
-</div>
         `
     });
     listProduc.appendChild(Producto)
 }
-//Agregar al carrito de compra
 
 //Productos
 class Ropita{
@@ -65,14 +63,26 @@ class Ropita{
         console.log(`El nombre es ${this.nombre} y su precio es ${this.precio}`)
     }
 }
-let carrito = []
+
 
 const Ropa1 = new Ropita("Remera deportiva Nike", 2800)
-const Ropa2 = new Ropita("Remera deportiva Nike", 2800)
-const Ropa3 = new Ropita("Remera deportiva Nike", 2800)
-const Ropa4 = new Ropita("Remera deportiva Nike", 2800)
-const Ropa5 = new Ropita("Remera deportiva Nike", 2800)
-const Ropa6 = new Ropita("Remera deportiva Nike", 2800)
+const Ropa2 = new Ropita("Remera deportiva Adidas", 3200)
+const Ropa3 = new Ropita("Remera deportiva Puma", 2800)
+const Ropa4 = new Ropita("Buzo Simple", 1500)
+const Ropa5 = new Ropita("Buzo Bordado", 4500)
+const Ropa6 = new Ropita("Buzo Hollister", 5200)
 
-let stockProducts = []
+const stockProducts = []
 stockProducts.push(Ropa1,Ropa2,Ropa3,Ropa4,Ropa5,Ropa6)
+localStorage.setItem("Products", JSON.stringify(stockProducts))
+
+//Carrito de compras
+
+//Sumar Productos
+function compraTotal(array){
+    let acumulador = 0
+
+    acumulador = array.reduce((acumulador, productoCarrito)=>{
+        return acumulador + productoCarrito
+    })
+}
